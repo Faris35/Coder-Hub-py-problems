@@ -21,3 +21,15 @@ def largest_smallest(array_values: List[int]) -> List[int]:
 
 def array_root(arr: List[float]) -> List[float]:
     return [round(item ** 0.5, 2) for item in arr]
+
+def sortByLength(txt: str) -> str:
+    lst = txt.split()
+    lst.sort(key=len)
+    return ' '.join(lst)
+
+def count_ones(num: int) -> int:
+    return bin(num).count('1')
+
+# NOTE: This function is not correct 
+def removeSpecialCharacters(strParam: str) -> str:
+    return ''.join(e for e in strParam if e.isalnum() or e == 'ـ' or e == '-')
