@@ -78,4 +78,33 @@ def longestZero(strParam: str) -> str:
     return (sorted(strParam.split('1'),key=len)[-1])
 
 def find_prefix(words: List[str], text: str) -> List[str]:
+    lst=[]
+    for i in words:
+        if i.lower().startswith(text.lower()):
+            lst.append(i)
+    return lst if lst else ['No matches found']
+
+def max_element(arr: List[int]) -> int:
+    return sorted(arr)[-1]
+
+def smallest_number(arr: List[int]) -> int:
+    return sorted(arr)[0]
+
+def cumulative_sum(arr: list[int]) -> list[int]:
+    cum_sum = []
+    current_sum = 0
+    for num in arr:
+        current_sum += num
+        cum_sum.append(current_sum)
+    return cum_sum
+
+def str_len_comparison(words: List[str]) -> bool:
+    if len(words) <= 1:
+        return False
+    for i in range(len(words)-1):
+        if len(words[i]) != len(words[i+1]):
+            return False
+    return True
     
+def most_frequent_element(arr: list[int]) -> int:
+    return max(set(arr), key=arr.count)
